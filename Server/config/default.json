@@ -1,5 +1,5 @@
 {
   "mongoURI": "mongodb://localhost/newname",
-  "MONGOURI": "mongodb+srv://presley:Home1996@cluster0-tpdvk.mongodb.net/powerdrive",
+  "MONGOURI": "mongodb+srv://presley:Homes1996@cluster0-tpdvk.mongodb.net/powerdrive",
   "jwtSecret": "new_name@579*"
 }
