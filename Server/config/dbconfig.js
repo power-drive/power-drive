@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const config = require("config");
 
 dbconnection = () => {
-  mongoose.connect(config.get("mongoURI"));
+  mongoose.connect(config.get("MONGOURI") || config.get("mongoURI"));
   let db = mongoose.connection;
 
   //Check for connection
@@ -17,4 +17,3 @@ dbconnection = () => {
 };
 
 module.exports = dbconnection;
-
