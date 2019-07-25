@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd Client && npm start",
     "server": "cd Server && npm run server",
+    "start": "node Server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Presley Maphosa",
