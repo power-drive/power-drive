@@ -14,8 +14,8 @@ supplier_authRoute.use(bodyParser.urlencoded({ extended: false }));
 supplier_authRoute.use(bodyParser.json());
 
 const nexmo = new Nexmo({
-  apiKey: "e208ab9f",
-  apiSecret: "MzMe5LildebyhoO7"
+  apiKey: "605bc007",
+  apiSecret: "6XK4wTYOkoe5fgJ8"
 });
 
 // @route     POST api/supplier/new
@@ -40,8 +40,10 @@ supplier_authRoute.post("/new", (req, res) => {
           .then(docs => {
             nexmo.message.sendSms(
               "PowerDrive",
-              `${"+263"}783248962`,
-              `Your PowerDrive password is ${data.password}`,
+              `${"+263"}772853166`,
+              `Congradulation! You have passed as PowerDrive's supplier of ${
+                data.cartegory
+              }. Your PowerDrive password is ${data.password}`,
               (err, responseData) => {
                 if (err) {
                   console.log(err);
