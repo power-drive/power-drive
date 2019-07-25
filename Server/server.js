@@ -41,9 +41,8 @@ app.use("/api/communication", communicationRoute);
 app.use("/api/upload", fileUploadRoute);
 
 //********** ROUTES END
-
+console.log("Hie");
 if (process.env.MODE_ENV === "production") {
-  console.log("Hie");
   app.use(express.static(path.resolve(__dirname + "/../Client/build")));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname + "/../Client/build/index.html"));
