@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb://localhost/newname",
+  "jwtSecret": "new_name@579*"
+}

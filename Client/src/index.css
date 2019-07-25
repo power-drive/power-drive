@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "crafty girls";
+  src: url("./assets/fonts/crafty_girls/CraftyGirls.ttf");
+}
+@font-face {
+  font-family: "ubuntu";
+  src: url("./assets/fonts/Ubuntu/Ubuntu-Regular.ttf"),
+    url("./assets/fonts/Ubuntu/Ubuntu-Light.ttf"),
+    url("./assets/fonts/Ubuntu/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: "nunito";
+  src: url("./assets/fonts/Nunito/Nunito-Bold.ttf");
+}
+
+@font-face {
+  font-family: "avenir linotype 45";
+  src: url("./assets/fonts/avenir_lt_45_book_oblique/Avenir_LT_45_Book_Oblique.ttf");
+}
+
+@font-face {
+  font-family: "avenir linotype";
+  src: url("./assets/fonts/avenir_lt_45_book_oblique/Avenir_LT_45_Book_Oblique.ttf");
+}
+
+@font-face {
+  font-family: "open sans";
+  src: url("./assets/fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+/* @font-face {
+  font-family: "times new roman";
+  src: url("./assets/fonts/Times_New_Roman/times_new_roman.ttf");
+} */
+
+@font-face {
+  font-family: "djb about a boy";
+  src: url("./assets/fonts/djb_about_a_boy/DJB_About_a_Boy.ttf");
+}
+
+@font-face {
+  font-family: "cabin sketch regular";
+  src: url("./assets/fonts/cabin_sketch_regular/cabin-sketch.regular.ttf");
+}
+
+@font-face {
+  font-family: "hanzipen sc regular";
+  src: url("./assets/fonts/hanzipen_sc_regular/hanzipen-sc-regular.ttf"),
+    url("./assets/fonts/hanzipen_sc_regular/hanzipen-sc-regular.otf");
+}
+
+@font-face {
+  font-family: "hanzipen tc bold";
+  src: url("./assets/fonts/hanzipen_tc_bold/hanzipen-tc-bold.ttf"),
+    url("./assets/fonts/hanzipen_tc_bold/hanzipen-tc-bold.otf");
+}
+
+@font-face {
+  font-family: "lemon tuesday";
+  src: url(./assets/fonts/lemon_tuesday/Lemon_Tuesday.otf);
+}
+
+/*
+@font-face {
+  font-family: 'libre baskerville regular';
+  src: url('./assets/fonts/libre_baskerville_regular/libre-baskerville-v5-latin-regular.ttf'),
+       url('./assets/fonts/libre_baskerville_regular/libre-baskerville-v5-latin-regular.eot'),
+       url('./assets/fonts/libre_baskerville_regular/libre-baskerville-v5-latin-regular.svg'),
+       url('./assets/fonts/libre_baskerville_regular/libre-baskerville-v5-latin-regular.woff'),
+       url('./assets/fonts/libre_baskerville_regular/libre-baskerville-v5-latin-regular.woff2')
+}
+*/
+
+/* latin-ext */
+@font-face {
+  font-family: "Libre Baskerville";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Libre Baskerville"), local("LibreBaskerville-Regular"),
+    url(https://fonts.gstatic.com/s/librebaskerville/v5/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMICA.woff2)
+      format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Libre Baskerville";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Libre Baskerville"), local("LibreBaskerville-Regular"),
+    url(https://fonts.gstatic.com/s/librebaskerville/v5/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #eee;
+  font-family: "ubuntu", sans-serif;
+  color: #3e454c;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
