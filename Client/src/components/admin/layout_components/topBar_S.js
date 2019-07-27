@@ -22,6 +22,7 @@ import { Button } from "@material-ui/core";
 const TopBarS = props => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [loggedOut, setloggedOut] = React.useState(false);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -45,12 +46,15 @@ const TopBarS = props => {
   }
 
   useEffect(() => {
-    const item = localStorage.getItem("supplier");
-
-    if (!item) {
+    if (loggedOut) {
       props.history.push("/supplier/login");
     }
-  });
+  }, [loggedOut]);
+
+  const logout = () => {
+    localStorage.removeItem("supplier");
+    setloggedOut(true);
+  };
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
