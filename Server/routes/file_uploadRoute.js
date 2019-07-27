@@ -23,11 +23,11 @@ uploadRoute.post("/file", function(req, res) {
     if (err instanceof multer.MulterError) {
       return res
         .status(500)
-        .json({ error: err, msg: "Failed to Upload the file" });
+        .json({ error: err, msg: "Failed to Upload the file. Try again " });
     } else if (err) {
       return res
         .status(500)
-        .json({ errror: err, msg: "Failed to Upload the file" });
+        .json({ error: err, msg: "Failed to Upload the file. Try again" });
     }
     return res
       .status(200)

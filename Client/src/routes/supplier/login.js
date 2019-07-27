@@ -31,7 +31,7 @@ export function SupplierLogin(props) {
       if (supplier) {
         props.history.push("/supplier/dashboard");
       } else {
-        props.history.push("/supplier/loggin");
+        props.history.push("/supplier/login");
       }
     }
     setLogged(false);

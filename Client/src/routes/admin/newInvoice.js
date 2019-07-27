@@ -110,6 +110,7 @@ const NewInvoice = props => {
                 <FormControl className={classes.formControl} fullWidth>
                   <InputLabel htmlFor="cartegory">Select Supplier</InputLabel>
                   <Select
+                    required
                     value={quotation.supplier}
                     onChange={e =>
                       setQuotation(prevState => {
@@ -148,6 +149,7 @@ const NewInvoice = props => {
               <Grid item md={7} xs={12}>
                 <TextInput
                   fullWidth
+                  required
                   id="regnumber"
                   label="Deadline"
                   className={classes.textField}
