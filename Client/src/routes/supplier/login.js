@@ -28,8 +28,10 @@ export function SupplierLogin(props) {
     if (logged) {
       const supplier = JSON.parse(localStorage.getItem("supplier"));
 
-      if (supplier._id) {
+      if (supplier) {
         props.history.push("/supplier/dashboard");
+      } else {
+        props.history.push("/supplier/loggin");
       }
     }
     setLogged(false);

@@ -51,10 +51,10 @@ const TopBarS = props => {
     }
   }, [loggedOut]);
 
-  const logout = () => {
+  function logout() {
     localStorage.removeItem("supplier");
     setloggedOut(true);
-  };
+  }
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -144,7 +144,11 @@ const TopBarS = props => {
               <AccountCircle />
             </IconButton>
 
-            <Button variant="outlined" color="secondary" onClick={logout}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => logout()}
+            >
               Logout
             </Button>
           </div>
