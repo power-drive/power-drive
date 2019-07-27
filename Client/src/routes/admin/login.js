@@ -15,38 +15,23 @@ import {
 export function AdminLogin(props) {
   const classes = useStyles();
   const [credentials, setCredentials] = useState({});
-  const [logged, setLogged] = useState(0);
-
-  // window.on("storage", event => {
-  //   let supplier = JSON.parse(event.originalEvent.newValue);
-  //   if (supplier) {
-  //     props.history.push("/supplier/dashboard");
-  //   }
-  // });
+  const [logged, setLogged] = useState(false);
+  const [redi, setRedi] = useEffect(false);
 
   useEffect(() => {
-    const admin = JSON.parse(localStorage.getItem("admin"));
-    if (admin) {
-      props.history.push("/admin/dashboard");
+    if (logged) {
+      const admin = JSON.parse(localStorage.getItem("admin"));
+      if (admin) {
+        props.history.push("/admin/dashboard");
+      }
     }
   }, [logged]);
-
-  // useEffect(() => {
-  //   if (logged) {
-  //     const supplier = localStorage.getItem("supplier");
-  //     if (supplier) {
-  //       props.history.push("/supplier/dashboard");
-  //     }
-  //   } else setLogged(false);
-  // }, [logged]);
 
   const _onSubmit = async e => {
     e.preventDefault();
     await logIn(credentials);
 
-    setLogged(prevState => {
-      return prevState + 1;
-    });
+    setLogged(true);
   };
 
   return (

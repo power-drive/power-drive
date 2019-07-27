@@ -80,6 +80,7 @@ const NewQuotation = props => {
         })
         .catch(err => {
           alert(err.response.data.msg);
+          console.log(err.response.data.error);
         });
     } else {
       alert("Please upload your request document");

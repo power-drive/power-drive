@@ -17,8 +17,6 @@ export function SupplierLogin(props) {
   const [credentials, setCredentials] = useState({});
   const [logged, setLogged] = useState(false);
 
-  const supplier = JSON.parse(localStorage.getItem("supplier"));
-
   // window.on("storage", event => {
   //   let supplier = JSON.parse(event.originalEvent.newValue);
   //   if (supplier) {
@@ -27,19 +25,15 @@ export function SupplierLogin(props) {
   // });
 
   useEffect(() => {
-    if (supplier) {
-      props.history.push("/supplier/dashboard");
-    }
-  }, [supplier]);
+    if (logged) {
+      const supplier = JSON.parse(localStorage.getItem("supplier"));
 
-  // useEffect(() => {
-  //   if (logged) {
-  //     const supplier = localStorage.getItem("supplier");
-  //     if (supplier) {
-  //       props.history.push("/supplier/dashboard");
-  //     }
-  //   } else setLogged(false);
-  // }, [logged]);
+      if (supplier) {
+        props.history.push("/supplier/dashboard");
+      }
+    }
+    setLogged(false);
+  }, [logged]);
 
   const _onSubmit = async e => {
     e.preventDefault();
