@@ -79,10 +79,12 @@ const NewInvoice = props => {
           let data = quotation;
           data.request_path = res.data.file.path;
           data.response_path = null;
-          saveQuotation(data);
         })
         .catch(err => {
-          alert(err.response.data.msg);
+          let data = quotation;
+          data.request_path = err.response.data.error.path;
+          data.response_path = null;
+          saveQuotation(data);
         });
     } else {
       alert("Please upload your request document");

@@ -75,11 +75,11 @@ const SupplierDashboard = () => {
         .then(res => {
           let data = quotation;
           data.response_path = res.data.file.path;
-
-          updateQuotation(data);
         })
         .catch(err => {
-          alert(err.response.data.msg);
+          let data = quotation;
+          data.response_path = err.response.data.error.path;
+          updateQuotation(data);
         });
     } else {
       alert("Please upload your response document");
@@ -98,11 +98,11 @@ const SupplierDashboard = () => {
         .then(res => {
           let data = invoice;
           data.response_path = res.data.file.path;
-
-          updateInvoice(data);
         })
         .catch(err => {
-          alert(err.response.data.msg);
+          let data = invoice;
+          data.response_path = err.response.data.error.path;
+          updateInvoice(data);
         });
     } else {
       alert("Please upload your response document");
@@ -126,10 +126,7 @@ const SupplierDashboard = () => {
                       <h5>Quotation No. : {element._id}</h5>
                       <h5>Date Requested : {element.date_created}</h5>
                       <h5>Deadline : {element.date_created}</h5>
-                      <a
-                        href={"http://localhost:5001/" + element.request_path}
-                        target="_blank"
-                      >
+                      <a href={element.request_path} target="_blank">
                         View Request
                       </a>
                       <hr />
@@ -174,10 +171,7 @@ const SupplierDashboard = () => {
                       <h5>Invoioce No. : {element._id}</h5>
                       <h5>Date Requested : {element.date_created}</h5>
                       <h5>Deadline : {element.date_created}</h5>
-                      <a
-                        href={"http://localhost:5001/" + element.request_path}
-                        target="_blank"
-                      >
+                      <a href={element.request_path} target="_blank">
                         View Request
                       </a>
                       <hr />
