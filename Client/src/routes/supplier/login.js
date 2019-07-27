@@ -28,7 +28,7 @@ export function SupplierLogin(props) {
     if (logged) {
       const supplier = JSON.parse(localStorage.getItem("supplier"));
 
-      if (supplier) {
+      if (supplier._id) {
         props.history.push("/supplier/dashboard");
       }
     }
