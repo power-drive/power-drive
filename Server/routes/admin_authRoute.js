@@ -3,11 +3,16 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const quotation = require("../models/quotation");
 const invoice = require("../models/invoice");
-
+const Nexmo = require("nexmo");
 const admin_authRoute = express.Router();
 
 admin_authRoute.use(bodyParser.urlencoded({ extended: false }));
 admin_authRoute.use(bodyParser.json());
+
+const nexmo = new Nexmo({
+  apiKey: "605bc007",
+  apiSecret: "6XK4wTYOkoe5fgJ8"
+});
 
 // @route     GET api/teacher/data
 // @desc      Get User Profile
@@ -20,6 +25,29 @@ admin_authRoute.post("/newquotation", (req, res) => {
 
   Q.save()
     .then(docs => {
+      nexmo.message.sendSms(
+        "PowerDrive",
+        `${"+263"}772853166`,
+        `QUOTATION REQUEST. Deadline: ${data.deadline}`,
+        (err, responseData) => {
+          if (err) {
+            console.log(err);
+          } else {
+            if (responseData.messages[0]["status"] === "0") {
+              console.log("Message sent successfully.");
+            } else {
+              console.log(
+                `Message failed with error: ${
+                  responseData.messages[0]["error-text"]
+                }`
+              );
+              return res.status(400).json({
+                msg: "Supplier Registered but failed to send an SMS"
+              });
+            }
+          }
+        }
+      );
       return res.json({
         msg: "Quotation Successfully Requested"
       });
@@ -77,6 +105,29 @@ admin_authRoute.post("/newinvoice", (req, res) => {
 
   Q.save()
     .then(docs => {
+      nexmo.message.sendSms(
+        "PowerDrive",
+        `${"+263"}772853166`,
+        `IVOICE REQUEST. Deadline: ${data.deadline}`,
+        (err, responseData) => {
+          if (err) {
+            console.log(err);
+          } else {
+            if (responseData.messages[0]["status"] === "0") {
+              console.log("Message sent successfully.");
+            } else {
+              console.log(
+                `Message failed with error: ${
+                  responseData.messages[0]["error-text"]
+                }`
+              );
+              return res.status(400).json({
+                msg: "Supplier Registered but failed to send an SMS"
+              });
+            }
+          }
+        }
+      );
       return res.json({
         msg: "Invoice Successfully Requested"
       });
