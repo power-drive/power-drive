@@ -150,7 +150,12 @@ const NewInvoice = props => {
                   className={classes.textField}
                   margin="normal"
                   variant="outlined"
-                  value={cartegory ? cartegory : "."}
+                  value={quotation.deadline}
+                  onChange={e =>
+                    setQuotation(prevState => {
+                      return { ...prevState, deadline: e.target.value };
+                    })
+                  }
                 />
               </Grid>
 
