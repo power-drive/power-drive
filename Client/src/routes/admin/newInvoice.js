@@ -37,7 +37,10 @@ const NewInvoice = props => {
   const [image, setImage] = useState(null);
   const [suppliers, setSuppliers] = useState([]);
   const [cartegory, setCartegory] = useState(null);
-  const [quotation, setQuotation] = useState({ responded: false });
+  const [quotation, setQuotation] = useState({
+    responded: false,
+    deadline: ""
+  });
 
   useEffect(() => {
     if (quotation.supplier) {
@@ -151,11 +154,12 @@ const NewInvoice = props => {
                   margin="normal"
                   variant="outlined"
                   value={quotation.deadline}
-                  onChange={e =>
+                  onChange={event => {
+                    const { value } = event.target;
                     setQuotation(prevState => {
-                      return { ...prevState, deadline: e.target.value };
-                    })
-                  }
+                      return { ...prevState, deadline: value };
+                    });
+                  }}
                 />
               </Grid>
 
