@@ -25,23 +25,30 @@ export function SupplierLogin(props) {
   // });
 
   useEffect(() => {
-    if (logged) {
-      const supplier = JSON.parse(localStorage.getItem("supplier"));
-
-      if (supplier) {
-        props.history.push("/supplier/dashboard");
-      } else {
-        props.history.push("/supplier/login");
-      }
+    const supplier = JSON.parse(localStorage.getItem("supplier"));
+    if (supplier) {
+      props.history.push("/supplier/dashboard");
     }
-    setLogged(false);
+
+    if (logged) {
+      props.history.push("/supplier/dashboard");
+    }
   }, [logged]);
 
   const _onSubmit = async e => {
     e.preventDefault();
-    await logIn(credentials);
 
-    setLogged(true);
+    axios
+      .post("/api/supplier/login", credentials, {
+        headers: { "content-type": "application/JSON" }
+      })
+      .then(res => {
+        localStorage.setItem("supplier", JSON.stringify(res.data));
+        setLogged(true);
+      })
+      .catch(err => {
+        alert(err.response.data.msg);
+      });
   };
 
   return (
