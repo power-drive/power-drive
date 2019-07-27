@@ -144,7 +144,11 @@ const TopBarS = props => {
               <AccountCircle />
             </IconButton>
 
-            <Button variant="outlined" color="secondary" onClick={() => logout}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => logout()}
+            >
               Logout
             </Button>
           </div>
