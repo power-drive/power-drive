@@ -61,6 +61,13 @@ const QuotationsList = () => {
             ...element,
             name: element.supplier.name,
             cartegory: element.supplier.cartegory,
+            request_path: `https://powerdrive1.herokuapp.com/${
+              element.request_path
+            }`,
+            response_path: `https://powerdrive1.herokuapp.com/${
+              element.response_path
+            }`,
+
             responded: element.responded ? "True" : "False"
           };
         });

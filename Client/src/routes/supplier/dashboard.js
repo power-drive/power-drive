@@ -126,7 +126,12 @@ const SupplierDashboard = () => {
                       <h5>Quotation No. : {element._id}</h5>
                       <h5>Date Requested : {element.date_created}</h5>
                       <h5>Deadline : {element.date_created}</h5>
-                      <a href={element.request_path} target="_blank">
+                      <a
+                        href={`https://powerdrive1.herokuapp.com/${
+                          element.request_path
+                        }`}
+                        target="_blank"
+                      >
                         View Request
                       </a>
                       <hr />
@@ -171,7 +176,12 @@ const SupplierDashboard = () => {
                       <h5>Invoioce No. : {element._id}</h5>
                       <h5>Date Requested : {element.date_created}</h5>
                       <h5>Deadline : {element.date_created}</h5>
-                      <a href={element.request_path} target="_blank">
+                      <a
+                        href={`https://powerdrive1.herokuapp.com/${
+                          element.request_path
+                        }`}
+                        target="_blank"
+                      >
                         View Request
                       </a>
                       <hr />
