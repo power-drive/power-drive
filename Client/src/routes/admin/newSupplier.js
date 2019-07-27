@@ -41,27 +41,6 @@ const NewSupplier = props => {
 
   // STORE SUBSCRIPTION
   const dispatch = useDispatch();
-  //   const user = useSelector(state => state.auth.user);
-  //   const server_state = useSelector(state => state.server_state);
-  //   const students = useSelector(state => state.company.students);
-  //   const file = useSelector(state => state.file_upload.file);
-
-  // FUNCTIONS
-
-  //   useEffect(() => {
-  //     if (file && submit) {
-  //       dispatch(
-  //         registerStudent({
-  //           ...company,
-  //           dob: moment(company.dob).format("YYYY-MM-DD"),
-  //           image_path: "/" + file.path,
-  //           school_id: user.school_id,
-  //           class_id: user.class_id
-  //         })
-  //       );
-  //       setSubmit(false);
-  //     }
-  //   }, [file]);
 
   const _onSubmit = async e => {
     e.preventDefault();
