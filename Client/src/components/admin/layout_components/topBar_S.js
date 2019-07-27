@@ -144,11 +144,7 @@ const TopBarS = props => {
               <AccountCircle />
             </IconButton>
 
-            <Button
-              variant="outlined"
-              color="secondary"
-              onClick={() => localStorage.removeItem("supplier")}
-            >
+            <Button variant="outlined" color="secondary" onClick={logout}>
               Logout
             </Button>
           </div>
