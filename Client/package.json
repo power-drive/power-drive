@@ -8,7 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@material-ui/icons": "^4.2.1",
     "array-move": "^2.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "echarts": "^4.2.1",
     "echarts-for-react": "^2.0.15-beta.0",
     "fotorama-react-wrapper": "^1.0.6",
